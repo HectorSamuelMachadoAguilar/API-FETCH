@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilo.css">
+    <title>Consultar API</title>
+</head>
+<body>
+    <img id="API-Imagen" height="500" width="500">
+    <div></div>
+
+    <button id="btn">Consulta la API</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click",async () => {
+            let API = await fetch("https://dog.ceo/api/breeds/image/random", {method:"GET"});
+            let Respuesta = await API.json();
+                document.getElementById("API-Imagen").src = Respuesta.message;
+        });
+    </script>
+</body>
+</html>
