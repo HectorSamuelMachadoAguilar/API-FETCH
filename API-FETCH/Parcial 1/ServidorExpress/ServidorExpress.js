@@ -1,5 +1,13 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
+
+app.use((req,res,next)=>{
+    console.log("Peticion al server "+ new Date);
+    next();
+})
+
+app.use(morgan('combined'));
 
 app.get('/', (req, res) => {
     res.send('Respondiendo GET');
