@@ -24,9 +24,9 @@ app.get("/administrativos", (req,res,next)=>{
     console.log(req.body)
     res.send("Contestando a get administrativos");
 
-    for( const cargo in req.body){
-        console.log(req.body(cargo));
-    }
+//    for( const cargo in req.body){
+//        console.log(req.body(cargo));
+//    }
 })
 
 app.listen(3000, () => {
